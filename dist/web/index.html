@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>//BAKER/会话消息</title>
+    <link rel="icon" type="image/webp" href="./favicon-black.webp" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/webp" href="./favicon-white.webp" media="(prefers-color-scheme: dark)" />
+    <link rel="preload" href="./fonts/HarmonyOS_Sans_SC_Medium.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- ⭐ 本地 API 改道：把 api.peilika.beer 的请求转发到本地 /chat -->
+    <script>
+        (function () {
+            const origFetch = window.fetch;
+            window.fetch = function (input, init) {
+                try {
+                    if (typeof input === 'string' && input.includes('api.peilika.beer')) {
+                        console.log('[Local] 改道:', input, '-> /chat');
+                        input = '/chat';
+                    } else if (input && typeof input === 'object' && input.url && input.url.includes('api.peilika.beer')) {
+                        input = new Request('/chat', input);
+                    }
+                } catch (e) { console.warn('[Local] fetch 拦截出错', e); }
+                return origFetch.call(this, input, init);
+            };
+        })();
+    </script>
+
+    <script type="module" crossorigin src="./assets/index-DcEQ2V2X.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C9jY1OWO.css">
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>
