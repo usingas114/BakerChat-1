@@ -110,5 +110,5 @@ A: 删除整个文件夹即可。没有注册表、没有系统目录写入。
 
 本项目基于原作者 [NCreeper233/endfield-baker-chat](https://github.com/NCreeper233/endfield-baker-chat) 的前端资源构建。
 
-C++ 本地版源码："工作目录\BakerChat\src\main.cpp"
+C++ 本地版源码："工作目录\BakerChat\src"目录下
 前端资源版权归属原作者bilbil@Nuclear_Creeper所有。
