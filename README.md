@@ -94,7 +94,17 @@ A: 编辑 `src/main.cpp` 改端口，重新编译。
 
 **Q: 怎么卸载？**
 A: 删除整个文件夹即可。没有注册表、没有系统目录写入。
+**Q: 杀毒软件报毒？**
+A: 这是误报（False Positive），原因如下：
+- 本地配置使用加密存储（行为特征类似勒索软件）
+- 程序使用 HTTP 请求调用 AI API
+- 编译产物未进行代码签名
 
+所有源码均可自行审阅，无任何后门、无数据外传。
+如有疑虑，请自行编译或添加信任。
+
+提交误报：
+- 微软：https://www.microsoft.com/en-us/wdsi/filesubmission
 ---
 
 ## 免责声明
@@ -111,4 +121,4 @@ A: 删除整个文件夹即可。没有注册表、没有系统目录写入。
 本项目基于原作者 [NCreeper233/endfield-baker-chat](https://github.com/NCreeper233/endfield-baker-chat) 的前端资源构建。
 
 C++ 本地版源码："工作目录\BakerChat\src"目录下
-前端资源版权归属原作者bilbil@Nuclear_Creeper所有。
+前端资源版权归属原作者哔哩哔哩UP主@Nuclear_Creeper（NCreeper233/endfield-baker-chat）所有。
